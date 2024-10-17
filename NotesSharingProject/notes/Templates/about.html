@@ -1,0 +1,21 @@
+{% extends 'navigation.html' %}
+  {% load static%}
+{% block body%}
+
+<div style="background-color:green ; width:100%; height:100px">
+<h3 class="text-white container pt-4">About Us</h3>
+</div>
+
+<div class="container">
+    <img src="{% static 'images/about.jpg' %}" style="width:100%">
+<h4>ABOUT US</h4>
+    <hr>
+
+</div>
+
+<center><p>Hello Friends...<br>
+This is simple Virtual Notes Sharing Platform Developed by Mithilesh using Python Django,HTML,CSS,Bootstrap and sqlite
+</p></center>
+<br>
+<br>
+{% endblock%}

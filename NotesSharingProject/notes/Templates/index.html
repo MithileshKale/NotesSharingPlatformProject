@@ -1,0 +1,84 @@
+{% extends 'navigation.html' %}
+{% block body %}
+ {% load static%}
+
+
+<style>
+ .image{
+background-size: 100% 110%;
+background-image:url({% static 'images/Taking notes-amico.png'%})
+
+
+}
+</style>
+
+<div class="image">
+<div class="transparentbox">
+<p>Virtual Notes Sharing Platform</p>
+</div>
+</div>
+
+<h4 class="text-center text-danger mt-5">
+Just 4 steps to follow
+
+</h4>
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="box1">
+        <p class="halfcircle">
+          <i class="text-center fas fa-user-circle text-white mt-4" style="font-size:40px"></i>
+        </p>
+        <p class="halfcircleBottom" style="font-size:20px">
+          Create Account
+        </p>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="box1">
+        <p class="halfcircle">
+          <i class="text-center fas fa-sign-in-alt text-white mt-4" style="font-size:40px"></i>
+        </p>
+        <p class="halfcircleBottom" style="font-size:20px">
+          Login
+        </p>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="box1">
+        <p class="halfcircle">
+          <i class="text-center fas fa-upload text-white mt-4" style="font-size:40px"></i>
+        </p>
+        <p class="halfcircleBottom" style="font-size:20px">
+          Upload Notes
+        </p>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="box1">
+        <p class="halfcircle">
+          <i class="text-center fas fa-download text-white mt-4" style="font-size:40px"></i>
+        </p>
+        <p class="halfcircleBottom" style="font-size:20px">
+          Download Notes
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<br>
+<br>
+
+
+
+{% endblock%}

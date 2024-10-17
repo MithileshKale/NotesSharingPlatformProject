@@ -1,0 +1,93 @@
+{% extends 'navigation.html' %}
+{% load static %}
+{% block body %}
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+{% if error == "no" %}
+    <script>
+        $(document).ready(function () {
+            alert('Signup Successful');
+            window.location = '{% url 'userlogin' %}';
+        });
+    </script>
+{% endif %}
+
+{% if error == "yes" %}
+    <script>
+        $(document).ready(function () {
+            alert('Something went wrong, Try Again');
+        });
+    </script>
+{% endif %}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-6">
+            <h2 class="text-center">EXISTING CUSTOMERS</h2>
+            <hr>
+            <p>By creating an account with our website, you will be able to move through the notes uploading and downloading process and more...</p>
+            <a href="{% url 'signup' %}" class="btn btn-danger text-white mt-5">CREATE AN ACCOUNT</a>
+        </div>
+        <div class="col-sm-6">
+            <h2 class="text-center">REGISTER WITH US</h2>
+            <hr>
+            <p>If you do not have an account with us, please sign up...</p>
+            <form method="post">
+
+                {% csrf_token %}
+
+                <div class="form-group">
+                    <label for="id_firstname">First Name</label>
+                    <input type="text" class="form-control" placeholder="Enter First Name" name="firstname" id="id_firstname">
+                </div>
+
+                <div class="form-group">
+                    <label for="id_lastname">Last Name</label>
+                    <input type="text" class="form-control" placeholder="Enter Last Name" name="lastname" id="id_lastname">
+                </div>
+
+                <div class="form-group">
+                    <label for="id_contact">Contact</label>
+                    <input type="text" class="form-control" placeholder="Enter Contact Number" name="contact" id="id_contact">
+                </div>
+
+                <div class="form-group">
+                    <label for="id_emailid">Email ID</label>
+                    <input type="text" class="form-control" placeholder="Enter your Email ID" name="emailid" id="id_emailid">
+                </div>
+
+                <div class="form-group">
+                    <label for="id_password">Password</label>
+                    <input type="password" class="form-control" placeholder="Enter Password" name="password" id="id_password">
+                </div>
+
+                <div class="form-group">
+                    <label for="id_branch">Branch</label>
+                    <select class="form-control" name="branch" id="id_branch">
+                        <option value="">Choose branch</option>
+                        <option value="Computer science">Computer Science</option>
+                        <option value="Mechanical">Mechanical</option>
+                        <option value="Civil">Civil</option>
+                        <option value="Electrical">Electrical</option>
+                        <option value="Electronics">Electronics</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="id_role">Are You?</label>
+                    <select class="form-control" name="role" id="id_role">
+                        <option value="Student">Student</option>
+                        <option value="Teacher">Teacher</option>
+                    </select>
+                </div>
+
+                <center><input type="submit" class="btn btn-danger mt-2" value="REGISTER"></center>
+
+            </form>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+
+{% endblock %}
